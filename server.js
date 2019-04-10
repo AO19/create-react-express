@@ -1,4 +1,5 @@
 const express = require('express');
+const routes = require('./routes/index');
 
 // create our Express App
 const app = express();
@@ -7,14 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/customers', (req, res) => {
-  const customers = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-  ];
-
-  res.json(customers);
-});
+// use routes
+app.use('/', routes);
 
 module.exports = app;
