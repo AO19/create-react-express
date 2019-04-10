@@ -1,6 +1,11 @@
 const express = require('express');
 
+// create our Express App
 const app = express();
+
+// Takes the raw requests and turns them into usable properties
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/api/customers', (req, res) => {
   const customers = [
@@ -12,6 +17,4 @@ app.get('/api/customers', (req, res) => {
   res.json(customers);
 });
 
-const port = 5000;
-
-app.listen(port, () => `Server running on port ${port}`);
+module.exports = app;
