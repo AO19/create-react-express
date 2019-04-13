@@ -26,7 +26,7 @@ npm run client
 
 ## Additional Information
 
-Use dotenv in a environment.env file for safe deployment, never push this file to git.  
+Use dotenv in a variables.env file for safe deployment, never push this file to git.  
 Install [dotenv](https://github.com/motdotla/dotenv) package
 ```
 npm install dotenv
