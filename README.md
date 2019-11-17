@@ -26,13 +26,13 @@ npm run client
 
 ## Additional Information
 
-Use dotenv in a variables.env file for safe deployment, never push this file to git.  
+Use dotenv in a variables.env file for safe deployment, never push this file to git.
 Install [dotenv](https://github.com/motdotla/dotenv) package
 ```
 npm install dotenv
-```  
+```
 
-Use express-session for simple session middleware usage for Express.  
+Use express-session for simple session middleware usage for Express.
 Great for cookies and sessions.
 Install [express-session](https://github.com/expressjs/session) package
 ```
@@ -43,7 +43,7 @@ npm install express-session
 
 ### Author
 
-AO17
+AO19
 
 ### Version
 
