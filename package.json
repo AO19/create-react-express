@@ -1,7 +1,7 @@
 {
   "name": "create-react-express",
   "version": "1.0.0",
-  "description": "Foodball Club",
+  "description": "Starter Pack for React and Express App",
   "main": "start.js",
   "dependencies": {
     "concurrently": "^4.1.2",
