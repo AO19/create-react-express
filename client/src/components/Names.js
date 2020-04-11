@@ -1,30 +1,32 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 
-export default class Names extends Component {
-  constructor() {
-    super();
-    this.state = {
-      names: [],
+const Names = () => {
+  const [names, setNames] = useState([]);
+
+  useEffect(() => {
+    const fetchNames = async () => {
+      try {
+        const fetchedNames = await (await fetch('/api/names')).json();
+        setNames(fetchedNames);
+      } catch (error) {
+        console.error(error);
+      }
     };
-  }
+    fetchNames();
+  }, []);
 
-  componentDidMount() {
-    fetch('/api/names')
-      .then(res => res.json())
-      .then(names => this.setState({names},
-        () => console.log(`Fetched ${names.length} names:`, names)));
-  }
+  return (
+    <div>
+      <h2>Names</h2>
+      <ul>
+        {names.map((name) => (
+          <li key={name.id}>
+            {name.firstName} {name.lastName}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <h2>Names</h2>
-        <ul>
-          {this.state.names.map(name =>
-            <li key={name.id}>{name.firstName} {name.lastName}</li>
-          )}
-        </ul>
-      </div>
-    )
-  }
-}
+export default Names;
